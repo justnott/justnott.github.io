@@ -1,10 +1,14 @@
 <div class="loading">
   <div class="spinner"></div>
   <div class="text">Hang tight</div>
+  <div class="number">1</div>
 </div>
 
 <style>
 .loading {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +28,13 @@
   margin-left: 10px;
   font-size: 24px;
   font-weight: bold;
+}
+
+.number {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 18px;
 }
 
 @keyframes spin {
