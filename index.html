@@ -1,5 +1,6 @@
 <div class="loading">
   <div class="spinner"></div>
+  <div class="text">Hang tight</div>
 </div>
 
 <style>
@@ -19,9 +20,16 @@
   animation: spin 1s ease-in-out infinite;
 }
 
+.text {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
 </style>
+
