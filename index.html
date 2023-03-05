@@ -15,6 +15,10 @@
   height: 100%;
 }
 
+.spinner-container {
+  position: relative; /* Add position relative to the parent */
+}
+
 .spinner {
   border: 3px solid rgba(0, 0, 0, 0.1);
   border-top-color: #3498db;
@@ -22,6 +26,9 @@
   width: 30px;
   height: 30px;
   animation: spin 1s ease-in-out infinite;
+  position: absolute; /* Add position absolute to position it relative to the parent */
+  left: 50%; /* Add left 50% to position it horizontally in the center */
+  transform: translateX(-50%); /* Add translateX(-50%) to center it perfectly */
 }
 
 .text {
@@ -44,9 +51,3 @@
 }
 </style>
 
-<script>
-  setTimeout(function() {
-    var loading = document.querySelector('.loading');
-    loading.style.display = 'none';
-  }, 5000); // Replace 5000 with the number of milliseconds you want to wait before hiding the loading animation
-</script>
