@@ -1,7 +1,39 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <title>My Website</title>
+    <style>
+      /* Center the loading screen */
+      #loading-screen {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div id="loading-screen">
+      <p>Loading...</p>
+    </div>
+
+    <!-- Message after loading -->
+    <div id="message" style="display: none;">
+      <p>Browser check complete. You may now close this page.</p>
+    </div>
+
+    <!-- JavaScript to hide loading screen after random amount of time -->
+    <script>
+      var minTime = 1000; // Minimum time to show loading screen (in milliseconds)
+      var maxTime = 5000; // Maximum time to show loading screen (in milliseconds)
+      var loadingScreen = document.getElementById("loading-screen");
+      var message = document.getElementById("message");
+      var loadingTime = Math.floor(Math.random() * (maxTime - minTime + 1) + minTime);
+      setTimeout(function() {
+        loadingScreen.style.display = "none";
+        message.style.display = "block";
+      }, loadingTime);
+    </script>
+  </body>
 </html>
