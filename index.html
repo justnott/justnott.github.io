@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Loading Screen</title>
+    <title>cooper's code - EthHAX</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #ffffff;
-        color: #333333;
+        background-color: #333333;
+        color: #ffffff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -19,8 +19,8 @@
       .spinner {
         width: 50px;
         height: 50px;
-        border: 5px solid #333333;
-        border-top-color: #ffffff;
+        border: 5px solid #ffffff;
+        border-top-color: #333333;
         border-radius: 50%;
         animation: spin 1s linear infinite;
         margin-right: 10px;
@@ -30,62 +30,6 @@
         to {
           transform: rotate(360deg);
         }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #333333;
-          color: #ffffff;
-        }
-      }
-
-      .dark-mode-switch {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-      }
-
-      .dark-mode-switch label {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-      }
-
-      .dark-mode-switch label input {
-        display: none;
-      }
-
-      .dark-mode-switch label span {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        border-radius: 34px;
-        transition: 0.4s;
-      }
-
-      .dark-mode-switch label span:before {
-        content: "";
-        position: absolute;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background-color: #fff;
-        top: 4px;
-        left: 4px;
-        transition: 0.4s;
-      }
-
-      .dark-mode-switch input:checked + span {
-        background-color: #2196F3;
-      }
-
-      .dark-mode-switch input:checked + span:before {
-        transform: translateX(26px);
       }
 
       .message {
@@ -100,21 +44,18 @@
     </style>
   </head>
   <body>
-    <div class="dark-mode-switch">
-      <label>
-        <input type="checkbox">
-        <span></span>
-      </label>
-    </div>
     <div class="loading">
       <div class="spinner"></div>
       <div>Loading...</div>
     </div>
     <div class="show-message">
-      <div class="message">Checking Browser...</div></div>
+      <div class="message">Checking Browser...</div>
+    </div>
     <script>
       function showMessage() {
+        const loadingElement = document.querySelector('.loading');
         const messageElement = document.querySelector('.show-message');
+        loadingElement.style.display = 'none';
         messageElement.classList.add('show-message');
       }
 
@@ -123,4 +64,3 @@
     </script>
   </body>
 </html>
-
