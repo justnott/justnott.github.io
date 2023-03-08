@@ -40,18 +40,23 @@
       }
 
       .message {
-        display: none;
         text-align: center;
         font-size: 24px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
       }
 
       .show-message .message {
-        display: block;
+        opacity: 1;
+      }
+
+      .loading.show-loading + .show-message .message {
+        display: none;
       }
     </style>
   </head>
   <body>
-    <div class="loading">
+    <div class="loading show-loading">
       <div class="spinner"></div>
       <div>Loading...</div>
     </div>
@@ -62,7 +67,7 @@
       function showMessage() {
         const loadingElement = document.querySelector('.loading');
         const messageElement = document.querySelector('.show-message');
-        loadingElement.style.display = 'none';
+        loadingElement.classList.remove('show-loading');
         messageElement.classList.add('show-message');
       }
 
@@ -71,6 +76,3 @@
     </script>
   </body>
 </html>
-
-
-    
