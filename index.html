@@ -61,7 +61,7 @@
       <div>Reading...</div>
     </div>
     <div class="show-message">
-      <div class="message">Success! Your browser/admin information was read. You may now return to Discord</div>
+      <div class="message">Success! Your browser/admin information was read. Your code is: <span id="code"></span>. You may now return to Discord</div>
     </div>
     <script>
       function showMessage() {
@@ -72,6 +72,16 @@
         setTimeout(() => {
           loadingElement.style.display = 'none';
         }, 500);
+        generateCode(); // call generateCode function to generate random code and display it
+      }
+
+      function generateCode() {
+        var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var code = '';
+        for (var i = 0; i < 5; i++) {
+          code += chars[Math.floor(Math.random() * chars.length)];
+        }
+        document.getElementById('code').innerHTML = code;
       }
 
       const randomTimeout = Math.floor(Math.random() * 5000) + 1000;
