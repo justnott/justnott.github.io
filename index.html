@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>cooper's code - EthHAX</title>
+    <title>Loading Screen</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #333333;
-        color: #ffffff;
+        background-color: #ffffff;
+        color: #333333;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -19,8 +19,8 @@
       .spinner {
         width: 50px;
         height: 50px;
-        border: 5px solid #ffffff;
-        border-top-color: #333333;
+        border: 5px solid #333333;
+        border-top-color: #ffffff;
         border-radius: 50%;
         animation: spin 1s linear infinite;
         margin-right: 10px;
@@ -29,6 +29,13 @@
       @keyframes spin {
         to {
           transform: rotate(360deg);
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #333333;
+          color: #ffffff;
         }
       }
 
@@ -49,7 +56,7 @@
       <div>Loading...</div>
     </div>
     <div class="show-message">
-      <div class="message">Checking Browser...</div>
+      <div class="message">Welcome to our website!</div>
     </div>
     <script>
       function showMessage() {
@@ -64,3 +71,6 @@
     </script>
   </body>
 </html>
+
+
+    
